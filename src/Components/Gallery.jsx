@@ -29,7 +29,6 @@ export default function Gallery(){
             className={`${styles.dot} ${i === activeIndex ? styles.active : ' '}`}
             onClick={() => {
               // setActiveIndex(i)
-              console.log(activeIndex)
             }} 
           />
         ))}
