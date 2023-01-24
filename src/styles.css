@@ -1,10 +1,19 @@
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+   url("./fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-weight: Medium;
+  }
+
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat";
 }
 
-  *{
+*{
     -ms-overflow-style: none;
   }
   ::-webkit-scrollbar {
@@ -36,5 +45,122 @@ body,
   justify-content: center;
 }
 
+
+
+/* Image Gallery */
+
+.container {
+  background: #171720;
+}
+
+.main {
+  height: 400px;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 70px 100px;
+}
+
+.marker {
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 110px;
+  font-family: monospace;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transition: .5s ease;
+}
+
+.navbar{
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 175px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dot{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%; /* this will make the div into a circle shape */
+  background-color: grey;
+  opacity: 0.5;
+
+}
+
+.active {
+  background-color: white;
+  opacity: 1;
+}
+
+.middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    height: 262px;
+    background-color: black;
+    width: 502px;
+    transition: all 0.4s ease;
+}
+
+
+.text{
+  background-color: #04AA6D;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%
+}
+
+
+.circle{
+  position:absolute;
+  width:70px;
+  height:70px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.circle:before {
+  content: "View\AProject";
+  white-space: pre; /* to preserve line breaks */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px; /* adjust the font size */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle:before{
+  border-radius: 50%; /* makes the div circular */
+  background-color: #04AA6D; /* add background color */
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+  color: white;
+}
 
 
