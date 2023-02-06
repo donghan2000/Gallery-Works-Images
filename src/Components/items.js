@@ -4,6 +4,7 @@ export const items = [
       'url(https://images.pexels.com/photos/416430/pexels-photo-416430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)',
     height: 150,
     Title: "Fusion",
+    workContentImage:"./img/Fusion-content.png"
   },
   {
     imageUrl:

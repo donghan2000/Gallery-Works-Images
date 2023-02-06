@@ -16,7 +16,7 @@ const styles = {
  * @param {number} width - fixed item with
  * @param {number} visible - number of items that muste be visible on screen
  */
-export function Slider({ items, width = 600, visible = 4, style, children , setActiveIndex }) {
+export function Slider({ items, width = 600, visible = 4, style, children , setActiveIndex , setModal }) {
   const idx = useCallback((x, l = items.length) => (x < 0 ? x + l : x) % l, [items])
   const getPos = useCallback((i, firstVis, firstVisIdx) => idx(i - firstVis + firstVisIdx), [idx])
   const [springs, api] = useSprings(items.length, i => ({ x: (i < items.length - 1 ? i : -1) * width }))
@@ -51,6 +51,8 @@ export function Slider({ items, width = 600, visible = 4, style, children , setA
   useGesture(
     {
       onDrag: ({ event, offset: [x], direction: [dx] }) => {
+
+        setModal(false);
 
   if (dx) {
         dragOffset.current = -x
@@ -134,7 +136,7 @@ export function Slider({ items, width = 600, visible = 4, style, children , setA
   return <>
     <div ref={target} style={{ ...style, ...styles.container }}>
       {springs.map(({ x }, i) => (
-        <a.div key={i} style={{ ...styles.item, width, x }} children={children(items[i], i)} />
+          <a.div key={i} style={{ ...styles.item, width, x }} children={children(items[i], i)} />
       ))}
     </div>
   </>
